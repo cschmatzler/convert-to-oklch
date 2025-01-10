@@ -50,7 +50,7 @@ const getConvertedColor = (color, precision) => {
 	}
 
 	oklch.coords = roundColorComponentsValues(oklch);
-	return oklch.toString();
+	return oklch.toString().replace(/\bNaN\b/g, "0");
 };
 
 export default (precision) => ({
